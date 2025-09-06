@@ -26,10 +26,10 @@
   </head>
 
   <body class="font-inter">
-    <header>
+    <header class="max-w-[1920px] mx-auto">
       <!-- navbar -->
-      <nav>
-        <div class="navbar bg-[#15803d] shadow-sm">
+      <nav class="">
+        <div class="navbar lg:px-32 md:15 bg-[#15803d] shadow-sm">
           <div class="navbar-start">
             <div class="dropdown">
               <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -79,26 +79,61 @@
 
       <!-- hero section -->
       <section>
-        <div class=" bg-[#cff0dc] gap-25 md:flex items-center justify-between">
-          <div class=" flex-1 md:block hidden">
-            <img src="./assets/hero-leaf1.png" alt="">
+        <div class="bg-[#cff0dc] gap-25 md:flex items-center justify-between">
+          <div class="flex-1 md:block hidden">
+            <img src="./assets/hero-leaf1.png" alt="" />
           </div>
-          <div class=" text-center space-y-3 py-5 px-3">
-            <h2 class="text-[#1f2937] md:text-5xl text-2xl font-bold">Plant a Tree, Grow a Future</h2>
+          <div class="text-center space-y-3 py-5 px-3">
+            <h2 class="text-[#1f2937] md:text-5xl text-2xl font-bold">
+              Plant a Tree, Grow a Future
+            </h2>
             <p class="text-gray-700">
               Join our mission to plant 1 million trees and make the Earth
               greener for future generations.
             </p>
             <a
-              class="btn border-none text-[#168576] hover:text-white hover:bg-[#facc1540] rounded-full bg-[#facc15]"
+              class="btn border-none text-[#168576] hover:text-green-700 hover:bg-[#facc1540] rounded-full bg-[#facc15]"
               >Get Involved</a
             >
           </div>
-          <div class=" flex-1 hidden md:block">
-            <img src="./assets/hero-leaf2.png" alt="">
+          <div class="flex-1 hidden md:block">
+            <img src="./assets/hero-leaf2.png" alt="" />
           </div>
-        </div> 
+        </div>
       </section>
     </header>
+
+    <!-- main section -->
+    <main class="bg-[#f0fdf4] py-10 lg:py-25 space-y-25">
+      <!-- About the Campaign section -->
+      <section class="max-w-[1090px] mx-auto">
+        <h1 class="md:text-4xl text-2xl md:mb-10 text-center font-bold text-[#1f2937]">
+          About the Campaign
+        </h1>
+
+        <!-- hero -->
+
+        <div class="hero">
+          <div class="hero-content flex-col lg:flex-row-reverse">
+            <div class="text-center text-gray-500 max-w-[530px] lg:text-left">
+              <p class="py-6">
+                planting a tree is one of the simplest yet most powerful gift we can give to nature and future generation. A single tree provides shade, clean air, and shelter for countless living beings while helping to fight climate change. By planting today, we are creating a greener, healthier, and more hopeful tomorrow.
+              </p>
+
+              <ul class="list-disc ml-8">
+                <li>Restoration of natural habitats</li>
+                <li>Improvement of air quality</li>
+                <li>Support for local communities</li>
+              </ul>
+            </div>
+            <div class="max-w-[530px]">
+              <div class="">
+                <img src="./assets/about.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
