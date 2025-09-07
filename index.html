@@ -21,6 +21,15 @@
       rel="stylesheet"
     />
 
+    <!-- font awesome cnd link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <!-- css link -->
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
@@ -105,6 +114,70 @@
 
     <!-- main section -->
     <main class="bg-[#f0fdf4] lg:py-10 lg:py-25 lg:space-y-25">
+      <!-- Choose Your Trees section -->
+      <section class="max-w-[1650px] mx-auto">
+        <h1
+          class="md:text-4xl text-2xl md:mb-10 text-center font-bold text-[#1f2937]"
+        >
+          Choose Your Trees
+        </h1>
+
+        <div class="grid grid-cols-1 md:-m-8 gap-4 md:grid-cols-12">
+          <!-- category -->
+          <aside class=" md:col-span-2">
+            <h3
+              class="md:text-2xl text-xl py-2 text-center font-bold text-bold"
+            >
+              Categories
+            </h3>
+            <div
+              id="category-container"
+              class="flex md:flex-col flex-row md:flex-nowrap flex-wrap gap-4 justify-center w-full"
+            ></div>
+          </aside>
+          <!-- cards -->
+          <div class="md:col-span-8">
+            <div
+              id="card-container"
+              class="grid md:grid-cols-3 grid-cols-1 gap-4"
+            >
+              <div class="card bg-white">
+                <figure class="px-3 pt-3">
+                  <img
+                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                    alt="Shoes"
+                    class="rounded-xl"
+                  />
+                </figure>
+                <div class="card-body items-center text-left">
+                  <h2 class="card-title text-left w-full">Card Title</h2>
+                  <p>
+                    A card component has a figure, a body part, and inside body
+                    there are title and actions parts
+                  </p>
+                  <div class="flex justify-between  w-full items-center">
+                    <div class="bg-[#15803d70] rounded-xl ">
+                      <p class="text-xl py-1 px-3 text-[#15803d]">Fruit Tree</p>
+                    </div>
+                    <div>
+                      <p>
+                        <i class="fa-solid fa-bangladeshi-taka-sign"></i>
+                        <span>500</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card-actions w-full">
+                    <button class="btn hover:bg-green-800 rounded-lg bg-[#15803d] w-full text-white">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- add to card -->
+          <aside class="bg-white md:col-span-2"></aside>
+        </div>
+      </section>
+
       <!-- About the Campaign section -->
       <section class="max-w-[1090px] mx-auto">
         <h1
@@ -118,7 +191,7 @@
         <div class="hero">
           <div class="hero-content flex-col lg:flex-row-reverse">
             <div class="text-center text-gray-500 max-w-[530px] lg:text-left">
-              <p class="py-6">
+              <p class="py-6 text-justify">
                 planting a tree is one of the simplest yet most powerful gift we
                 can give to nature and future generation. A single tree provides
                 shade, clean air, and shelter for countless living beings while
@@ -126,7 +199,7 @@
                 creating a greener, healthier, and more hopeful tomorrow.
               </p>
 
-              <ul class="list-disc ml-8">
+              <ul class="list-disc ml-5 text-left md:ml-8">
                 <li>Restoration of natural habitats</li>
                 <li>Improvement of air quality</li>
                 <li>Support for local communities</li>
@@ -143,12 +216,12 @@
     </main>
 
     <!-- our impact section -->
-    <section class="bg-[#cff0dc] pt-25 py-5">
+    <section class="bg-[#cff0dc] pt-10 md:pt-25 py-5">
       <h1 class="md:text-4xl text-3xl text-center font-bold text-[#1f2937]">
         Our Impact
       </h1>
       <div
-        class="max-w-[1650px] pb-25 flex md:flex-row justify-center items-center flex-col gap-4 p-4 mx-auto"
+        class="max-w-[1650px] md:pb-25 flex md:flex-row justify-center items-center flex-col gap-4 p-4 mx-auto"
       >
         <!-- card-1 -->
         <div
@@ -187,8 +260,10 @@
     </section>
 
     <!-- Plant a Tree Today section -->
-    <section class="bg-gradient-to-b from-[#166534] to-[#14532d] py-25">
-      <h1 class="md:text-5xl text-3xl mb-10 text-center font-bold text-white">
+    <section class="bg-gradient-to-t from-[#166534] to-[#14532d] py-5 md:py-25">
+      <h1
+        class="md:text-5xl text-3xl mb-5 md:mb-10 text-center font-bold text-white"
+      >
         Plant a Tree Today
       </h1>
 
@@ -198,14 +273,21 @@
       >
         <input type="text" class="input w-full" placeholder="Your Name" />
 
-        <input type="email" class="input w-full" placeholder="Your Email Address" />
+        <input
+          type="email"
+          class="input w-full"
+          placeholder="Your Email Address"
+        />
 
         <!-- dropdown -->
         <details class="dropdown w-full">
-          <summary class="btn m-1 w-full">Number of Trees</summary>
-          <ul
-            class="menu dropdown-content bg-base-100 rounded-box z-1 w-full p-2 shadow-sm"
-          >
+          <summary class="btn m-1 w-full">
+            <div class="flex justify-between w-full text-gray-500">
+              Number of Trees
+              <i class="fa-solid fa-less-than -rotate-90"></i>
+            </div>
+          </summary>
+          <ul class="menu dropdown-content bg-base-100 rounded-box z-1 p-2">
             <li><a>1 Tree $5</a></li>
             <li><a>5 Tree $25</a></li>
             <li><a>10 Tree $50</a></li>
@@ -217,11 +299,15 @@
           >Plant a Tree</a
         >
       </fieldset>
-      
     </section>
 
-    <section class="h-100">
-      <h1>2</h1>
-    </section>
+    <footer>
+      <p class="text-white text-2xl text-center py-6 bg-[#14532d]">
+        © 2025 Green Earth. All Rights Reserved.
+      </p>
+    </footer>
+
+    <!-- js files -->
+    <script src="./scripts/script.js"></script>
   </body>
 </html>
