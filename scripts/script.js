@@ -30,15 +30,6 @@ const loadCategoryBasedPlants = (id) => {
     .then((data) => displayCategoryBasedPlants(data.plants));
 };
 
-// {
-//     "id": 1,
-//     "image": "https://i.ibb.co.com/cSQdg7tf/mango-min.jpg",
-//     "name": "Mango Tree",
-//     "description": "A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green canopy offers shade, while its sweet fruits are rich in vitamins and minerals.",
-//     "category": "Fruit Tree",
-//     "price": 500
-// }
-
 
 const displayCategoryBasedPlants = (categoryPlants) => {
     // const allCategories = document.querySelectorAll('.categories');
@@ -57,7 +48,7 @@ const displayCategoryBasedPlants = (categoryPlants) => {
                   />
                 </figure>
                 <div class="card-body h-65  items-center text-left">
-                  <h2 class="card-title text-left w-full">${plant.name}</h2>
+                  <h2 onclick="my_modal_5.showModal()" class="card-title text-left w-full cursor-pointer">${plant.name}</h2>
                   <p>
                     ${plant.description}
                   </p>
@@ -106,7 +97,7 @@ const showAllPlants = (plants) =>{
                   />
                 </figure>
                 <div class="card-body h-65 items-center text-left">
-                  <h2 class="card-title text-left w-full">${plant.name}</h2>
+                  <h2 onclick="my_modal_5.showModal()" class="card-title text-left w-full cursor-pointer">${plant.name}</h2>
                   <p>
                     ${plant.description}
                   </p>
@@ -132,3 +123,5 @@ const showAllPlants = (plants) =>{
   });
 }
 loadAllPlants();
+
+// ❗❗❗❗❗❗modal❗❗❗❗❗❗
