@@ -1,3 +1,7 @@
 .font-inter {
   font-family: "Inter", sans-serif;
 }
+.active{
+  background-color: #147b3b;
+  color: white;
+}
