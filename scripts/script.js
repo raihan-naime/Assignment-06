@@ -47,17 +47,16 @@ const displayCategoryBasedPlants = (categoryPlants) => {
     cardContainer.innerHTML = '';
 
   categoryPlants.forEach((plant) => {
-    console.log(plant);
     const div = document.createElement('div');
     div.innerHTML = `
-    <div class="card bg-white">
+    <div class="card bg-white hover:bg-gray-200">
                 <figure class="px-3 pt-3">
                   <img
                     src="${plant.image}"
-                    class="rounded-xl"
+                    class="rounded-xl h-100 w-full"
                   />
                 </figure>
-                <div class="card-body items-center text-left">
+                <div class="card-body h-65  items-center text-left">
                   <h2 class="card-title text-left w-full">${plant.name}</h2>
                   <p>
                     ${plant.description}
@@ -84,3 +83,52 @@ const displayCategoryBasedPlants = (categoryPlants) => {
   });
 };
 
+// ❗❗❗❗❗❗show all plants by default❗❗❗❗❗❗
+const loadAllPlants = () =>{
+  const url = 'https://openapi.programming-hero.com/api/plants';
+  fetch(url)
+  .then(res => res.json())
+  .then(data => showAllPlants(data.plants))
+}
+
+
+const showAllPlants = (plants) =>{
+  const cardContainer = document.getElementById('card-container');
+    cardContainer.innerHTML = '';
+    plants.forEach((plant) => {
+    const div = document.createElement('div');
+    div.innerHTML = `
+    <div class="card bg-white hover:bg-gray-200">
+                <figure class="px-3 pt-3">
+                  <img
+                    src="${plant.image}"
+                    class="rounded-xl h-100 w-full"
+                  />
+                </figure>
+                <div class="card-body h-65 items-center text-left">
+                  <h2 class="card-title text-left w-full">${plant.name}</h2>
+                  <p>
+                    ${plant.description}
+                  </p>
+                  <div class="flex justify-between  w-full items-center">
+                    <div class="bg-[#15803d70] rounded-xl ">
+                      <p class="text-xl py-1 px-3 text-[#15803d]">${plant.category}</p>
+                    </div>
+                    <div>
+                      <p>
+                        <i class="fa-solid fa-bangladeshi-taka-sign"></i>
+                        <span>${plant.price}</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card-actions w-full">
+                    <button class="btn hover:bg-green-800 rounded-lg bg-[#15803d] w-full text-white">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+    `;
+    cardContainer.appendChild(div);
+
+  });
+}
+loadAllPlants();
