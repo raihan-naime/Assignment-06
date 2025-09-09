@@ -68,8 +68,8 @@
                 <li><a>Plant a Tree</a></li>
               </ul>
             </div>
-            <a class="btn btn-ghost text-2xl md:text-3xl text-white"
-              >Green Earth</a
+            <a class="btn btn-ghost text-xl md:text-3xl text-white"
+              >🌴 Green Earth</a
             >
           </div>
           <div class="navbar-center hidden lg:flex gap-8">
@@ -89,8 +89,9 @@
       <!-- hero section -->
       <section>
         <div class="bg-[#cff0dc] gap-25 md:flex items-center justify-between">
-          <div class="bg-[url('./assets/hero-leaf1.png')] bg-cover bg-center bg-no-repeat h-90 flex-1 md:block hidden">
-          </div>
+          <div
+            class="bg-[url('./assets/hero-leaf1.png')] bg-cover bg-center bg-no-repeat h-90 flex-1 md:block hidden"
+          ></div>
           <div class="text-center space-y-3 py-5 px-3">
             <h2 class="text-[#1f2937] md:text-5xl text-2xl font-bold">
               Plant a Tree, Grow a Future
@@ -104,17 +105,18 @@
               >Get Involved</a
             >
           </div>
-          <div class="bg-[url('./assets/hero-leaf2.png')] bg-cover bg-center bg-no-repeat h-90 flex-1 hidden md:block">
-          </div>
+          <div
+            class="bg-[url('./assets/hero-leaf2.png')] bg-cover bg-center bg-no-repeat h-90 flex-1 hidden md:block"
+          ></div>
         </div>
       </section>
     </header>
 
     <!-- spinner section -->
     <section id="spinner" class="hidden">
-      <div  class="mx-auto text-center flex  justify-center items-center h-20">
-      <span class="loading loading-dots loading-xl"></span>
-    </div>
+      <div class="mx-auto text-center flex justify-center items-center h-20">
+        <span class="loading loading-dots loading-xl"></span>
+      </div>
     </section>
 
     <!-- main section -->
@@ -122,12 +124,8 @@
       <!-- modal -->
       <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
         <div class="modal-box space-y-3">
-
-
           <!-- created  -->
-           <div id="modal-container">
-
-           </div>
+          <div id="modal-container"></div>
           <div class="modal-action">
             <form method="dialog">
               <!-- if there is a button in form, it will close the modal -->
@@ -148,7 +146,6 @@
         <div class="grid grid-cols-1 md:-m-8 gap-4 md:grid-cols-12">
           <!-- category -->
           <aside class="md:col-span-2">
-            
             <div
               id="category-container"
               class="flex md:flex-col flex-row md:flex-nowrap flex-wrap gap-4 justify-center w-full"
@@ -163,12 +160,15 @@
           </div>
           <!-- add to card -->
           <aside class="bg-white md:col-span-2">
-            <h2 class="text-2xl text-center bg-[#15803d] rounded-lg text-white py-3 mt-5  font-semibold">Your Cart</h2>
+            <h2
+              class="text-2xl text-center bg-[#15803d] rounded-lg text-white py-3 mt-5 font-semibold"
+            >
+              Your Cart
+            </h2>
 
-            <div id="add-to-card-container">
-              
-            </div>
-            <h2 class="text-2xl pl-4 text-black rounded-lg  py-3 mt-5  font-bold">Total: <span id="total-Bill">00</span>
+            <div id="add-to-card-container"></div>
+            <h2 class="text-2xl pl-4 text-black rounded-lg py-3 mt-5 font-bold">
+              Total: <span id="total-Bill">00</span>
               <i class="fa-solid fa-bangladeshi-taka-sign"></i>
             </h2>
           </aside>
@@ -222,7 +222,7 @@
       >
         <!-- card-1 -->
         <div
-          class="text-center p-5 flex-1 shadow hover:bg-[#15803d20] max-w-[500px] rounded-xl bg-white"
+          class="text-center p-5 flex-1 shadow hover:bg-[#15803d20] w-full rounded-xl bg-white"
         >
           <div class="stat">
             <div class="stat-value text-[#15803d] font-semibold text-4xl">
@@ -233,24 +233,24 @@
         </div>
         <!-- card-2 -->
         <div
-          class="text-center p-5 flex-1 shadow hover:bg-[#15803d20] max-w-[500px] rounded-xl bg-white"
+          class="text-center p-5 flex-1 shadow hover:bg-[#15803d20] w-full rounded-xl bg-white"
         >
           <div class="stat">
             <div class="stat-value text-[#15803d] font-semibold text-4xl">
-              500K+
+              120+
             </div>
-            <div class="stat-desc text-xl text-[#4c545f]">Trees Planted</div>
+            <div class="stat-desc text-xl text-[#4c545f]">Communities Involved</div>
           </div>
         </div>
         <!-- card-3 -->
         <div
-          class="text-center p-5 flex-1 shadow hover:bg-[#15803d20] max-w-[500px] rounded-xl bg-white"
+          class="text-center p-5 flex-1 shadow hover:bg-[#15803d20] w-full rounded-xl bg-white"
         >
           <div class="stat">
             <div class="stat-value text-[#15803d] font-semibold text-4xl">
-              500K+
+              30+
             </div>
-            <div class="stat-desc text-xl text-[#4c545f]">Trees Planted</div>
+            <div class="stat-desc text-xl text-[#4c545f]">Countries Reached</div>
           </div>
         </div>
       </div>
@@ -308,6 +308,5 @@
     <!-- js files -->
     <script src="./scripts/script.js"></script>
     <!-- <script src="./scripts/add-to-cart.js"></script> -->
-
   </body>
 </html>
