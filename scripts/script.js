@@ -100,7 +100,9 @@ const showAllPlants = (plants) => {
     
   const cardContainer = document.getElementById("card-container");
   cardContainer.innerHTML = "";
+  // console.log(plants)
   plants.forEach((plant) => {
+    // console.log(plant);
     const div = document.createElement("div");
     div.innerHTML = `
     <div class="card bg-white hover:bg-gray-200">
@@ -127,7 +129,7 @@ const showAllPlants = (plants) => {
                     </div>
                   </div>
                   <div class="card-actions w-full">
-                    <button class="btn hover:bg-green-800 rounded-lg bg-[#15803d] w-full text-white add-to-card">Add to Cart</button>
+                    <button onclick="loadAddToCardBtns()" class="btn hover:bg-green-800 rounded-lg bg-[#15803d] w-full text-white add-to-card">Add to Cart</button>
                   </div>
                 </div>
               </div>
@@ -159,7 +161,7 @@ const displayPlantDetails = (plantsInfo) => {
   document.getElementById("my_modal_5").showModal();
 };
 
-// ❗❗❗❗❗❗Challenge Part❗❗❗❗❗❗
+// ❗❗❗❗❗❗add to card section❗❗❗❗❗❗
 const cardContainer = document.getElementById('card-container')
 cardContainer.addEventListener('click', (e) =>{
   const btn = e.target.closest('.add-to-card');
@@ -168,7 +170,6 @@ cardContainer.addEventListener('click', (e) =>{
   if(btn){
     const addToCartContainer = document.getElementById('add-to-card-container');
     const price = Number(btn.parentNode.parentNode.children[2].children[1].children[0].children[1].innerText);
-    console.log(btn.parentNode);
     const plantName = btn.parentNode.parentNode.children[0].innerText;
     alert(`${plantName} has been added in the card`);
     
@@ -186,7 +187,6 @@ cardContainer.addEventListener('click', (e) =>{
     `;
     totalBillNUmber = totalBillNUmber + price;
     totalBill.innerText = totalBillNUmber;
-    console.log(totalBillNUmber, price);
     addToCartContainer.appendChild(div);
     
   }
@@ -206,6 +206,3 @@ const manageSpinner = (status) => {
 }
 
 // ❗❗❗❗❗❗remove bill❗❗❗❗❗❗
-const removeCard = (id)=>{
-
-}
