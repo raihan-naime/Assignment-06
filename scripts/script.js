@@ -160,37 +160,6 @@ const displayPlantDetails = (plantsInfo) => {
   document.getElementById("my_modal_5").showModal();
 };
 
-// ❗❗❗❗❗❗add to card section❗❗❗❗❗❗
-// const cardContainer = document.getElementById('card-container')
-// cardContainer.addEventListener('click', (e) =>{
-//   const btn = e.target.closest('.add-to-card');
-//   const totalBill = document.getElementById('total-Bill');
-//   let totalBillNUmber = parseFloat(totalBill.innerText);
-//   if(btn){
-//     const addToCartContainer = document.getElementById('add-to-card-container');
-//     const price = Number(btn.parentNode.parentNode.children[2].children[1].children[0].children[1].innerText);
-//     const plantName = btn.parentNode.parentNode.children[0].innerText;
-//     alert(`${plantName} has been added in the card`);
-
-//     const div = document.createElement('div');
-//     div.innerHTML = `
-//     <div class="flex justify-between items-center bg-[#f0fdf4] m-2 rounded-lg p-5">
-//                 <div>
-//                   <h3 class="text-2xl font-medium">${plantName}</h3>
-//                 <h3 class="text-xl"> <i class="fa-solid fa-bangladeshi-taka-sign"></i> ${price}</h3>
-//                 </div>
-//                 <div onclick="removeCard()" class="h-10 w-10 flex justify-center items-center order-cancel ">
-//                   ❌
-//                 </div>
-//               </div>
-//     `;
-//     totalBillNUmber = totalBillNUmber + price;
-//     totalBill.innerText = totalBillNUmber;
-//     addToCartContainer.appendChild(div);
-
-//   }
-
-// })
 
 // ❗❗❗❗❗❗manage spinner❗❗❗❗❗❗
 const manageSpinner = (status) => {
