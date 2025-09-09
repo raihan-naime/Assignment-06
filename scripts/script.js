@@ -163,9 +163,12 @@ const displayPlantDetails = (plantsInfo) => {
 const cardContainer = document.getElementById('card-container')
 cardContainer.addEventListener('click', (e) =>{
   const btn = e.target.closest('.add-to-card');
+  const totalBill = document.getElementById('total-Bill');
+  let totalBillNUmber = parseFloat(totalBill.innerText);
   if(btn){
     const addToCartContainer = document.getElementById('add-to-card-container');
     const price = Number(btn.parentNode.parentNode.children[2].children[1].children[0].children[1].innerText);
+    console.log(btn.parentNode);
     const plantName = btn.parentNode.parentNode.children[0].innerText;
     alert(`${plantName} has been added in the card`);
     
@@ -173,15 +176,19 @@ cardContainer.addEventListener('click', (e) =>{
     div.innerHTML = `
     <div class="flex justify-between items-center bg-[#f0fdf4] m-2 rounded-lg p-5">
                 <div>
-                  <h3 class="text-xl font-medium">${plantName}</h3>
-                <h3 class="text-xl">${price}</h3>
+                  <h3 class="text-2xl font-medium">${plantName}</h3>
+                <h3 class="text-xl"> <i class="fa-solid fa-bangladeshi-taka-sign"></i> ${price}</h3>
                 </div>
-                <div class="h-10 w-10 flex justify-center items-center order-cancel ">
+                <div onclick="removeCard()" class="h-10 w-10 flex justify-center items-center order-cancel ">
                   ❌
                 </div>
               </div>
     `;
+    totalBillNUmber = totalBillNUmber + price;
+    totalBill.innerText = totalBillNUmber;
+    console.log(totalBillNUmber, price);
     addToCartContainer.appendChild(div);
+    
   }
 
 })
@@ -196,4 +203,9 @@ const manageSpinner = (status) => {
     document.getElementById('spinner').classList.add('hidden');
     document.getElementById('card-container').classList.remove('hidden');
   }
+}
+
+// ❗❗❗❗❗❗remove bill❗❗❗❗❗❗
+const removeCard = (id)=>{
+
 }
