@@ -79,7 +79,7 @@ const displayCategoryBasedPlants = (categoryPlants) => {
                     </div>
                   </div>
                   <div class="card-actions w-full">
-                    <button onclick="loadAddToCardBtns(${ plant.id}, ${plant.price}, '${plant.name}')" class="btn hover:bg-green-800 rounded-lg bg-[#15803d] w-full text-white add-to-card">Add to Cart</button>
+                    <button onclick="loadAddToCardBtns(${plant.id}, ${plant.price}, '${plant.name}')" class="btn hover:bg-green-800 rounded-lg bg-[#15803d] w-full text-white add-to-card">Add to Cart</button>
                   </div>
                 </div>
               </div>
@@ -97,7 +97,6 @@ const loadAllPlants = () => {
     .then((data) => showAllPlants(data.plants));
 };
 const showAllPlants = (plants) => {
-    
   const cardContainer = document.getElementById("card-container");
   cardContainer.innerHTML = "";
   // console.log(plants)
@@ -129,7 +128,7 @@ const showAllPlants = (plants) => {
                     </div>
                   </div>
                   <div class="card-actions w-full">
-                    <button onclick="loadAddToCardBtns(${ plant.id}, ${plant.price}, '${plant.name}')" class="btn hover:bg-green-800 rounded-lg bg-[#15803d] w-full text-white add-to-card">Add to Cart</button>
+                    <button onclick="loadAddToCardBtns(${plant.id}, ${plant.price}, '${plant.name}')" class="btn hover:bg-green-800 rounded-lg bg-[#15803d] w-full text-white add-to-card">Add to Cart</button>
                   </div>
                 </div>
               </div>
@@ -172,7 +171,7 @@ const displayPlantDetails = (plantsInfo) => {
 //     const price = Number(btn.parentNode.parentNode.children[2].children[1].children[0].children[1].innerText);
 //     const plantName = btn.parentNode.parentNode.children[0].innerText;
 //     alert(`${plantName} has been added in the card`);
-    
+
 //     const div = document.createElement('div');
 //     div.innerHTML = `
 //     <div class="flex justify-between items-center bg-[#f0fdf4] m-2 rounded-lg p-5">
@@ -188,45 +187,46 @@ const displayPlantDetails = (plantsInfo) => {
 //     totalBillNUmber = totalBillNUmber + price;
 //     totalBill.innerText = totalBillNUmber;
 //     addToCartContainer.appendChild(div);
-    
+
 //   }
 
 // })
 
-
 // ❗❗❗❗❗❗manage spinner❗❗❗❗❗❗
 const manageSpinner = (status) => {
-  if(status){
-    document.getElementById('spinner').classList.remove('hidden');
-    document.getElementById('card-container').classList.add('hidden');
-  }else{
-    document.getElementById('spinner').classList.add('hidden');
-    document.getElementById('card-container').classList.remove('hidden');
+  if (status) {
+    document.getElementById("spinner").classList.remove("hidden");
+    document.getElementById("card-container").classList.add("hidden");
+  } else {
+    document.getElementById("spinner").classList.add("hidden");
+    document.getElementById("card-container").classList.remove("hidden");
   }
-}
+};
 
 // ❗❗❗❗❗❗remove bill❗❗❗❗❗❗
 const billCard = [];
 const loadAddToCardBtns = (plantId, plantPrice, plantName) => {
-  console.log(plantId, plantPrice, plantName);
-
-  const addToCartContainer = document.getElementById('add-to-card-container');
-    const totalBill = document.getElementById('total-Bill');
+  const addToCartContainer = document.getElementById("add-to-card-container");
+  const totalBill = document.getElementById("total-Bill");
   let totalBillNUmber = parseFloat(totalBill.innerText);
-   const div = document.createElement('div');
-    div.innerHTML = `
+  const div = document.createElement("div");
+  div.innerHTML = `
     <div class="flex justify-between items-center bg-[#f0fdf4] m-2 rounded-lg p-5">
                 <div>
                   <h3 class="text-2xl font-medium">${plantName}</h3>
                 <h3 class="text-xl"> <i class="fa-solid fa-bangladeshi-taka-sign"></i> ${plantPrice}</h3>
                 </div>
-                <div class="h-10 w-10 flex justify-center items-center order-cancel ">
+                <div id="cancel-order-${plantId}" onclick="cancelOrder(${plantId})" cursor-pointer class="h-10 w-10 flex justify-center items-center order-cancel ">
                   ❌
                 </div>
               </div>
     `;
-        totalBillNUmber = totalBillNUmber + plantPrice;
-    totalBill.innerText = totalBillNUmber;
-    addToCartContainer.appendChild(div);
+  totalBillNUmber = totalBillNUmber + plantPrice;
+  totalBill.innerText = totalBillNUmber;
+  alert(`${plantName} has been added to the card=t`);
+  addToCartContainer.appendChild(div);
 };
 
+const cancelOrder = (id) => {
+  
+}
