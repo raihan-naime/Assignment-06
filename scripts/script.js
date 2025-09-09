@@ -79,7 +79,7 @@ const displayCategoryBasedPlants = (categoryPlants) => {
                     </div>
                   </div>
                   <div class="card-actions w-full">
-                    <button class="btn hover:bg-green-800 rounded-lg bg-[#15803d] w-full text-white add-to-card">Add to Cart</button>
+                    <button onclick="loadAddToCardBtns(${ plant.id}, ${plant.price}, '${plant.name}')" class="btn hover:bg-green-800 rounded-lg bg-[#15803d] w-full text-white add-to-card">Add to Cart</button>
                   </div>
                 </div>
               </div>
@@ -129,7 +129,7 @@ const showAllPlants = (plants) => {
                     </div>
                   </div>
                   <div class="card-actions w-full">
-                    <button onclick="loadAddToCardBtns(${ plant.id}, ${plant.price})" class="btn hover:bg-green-800 rounded-lg bg-[#15803d] w-full text-white add-to-card">Add to Cart</button>
+                    <button onclick="loadAddToCardBtns(${ plant.id}, ${plant.price}, '${plant.name}')" class="btn hover:bg-green-800 rounded-lg bg-[#15803d] w-full text-white add-to-card">Add to Cart</button>
                   </div>
                 </div>
               </div>
@@ -162,36 +162,36 @@ const displayPlantDetails = (plantsInfo) => {
 };
 
 // ❗❗❗❗❗❗add to card section❗❗❗❗❗❗
-const cardContainer = document.getElementById('card-container')
-cardContainer.addEventListener('click', (e) =>{
-  const btn = e.target.closest('.add-to-card');
-  const totalBill = document.getElementById('total-Bill');
-  let totalBillNUmber = parseFloat(totalBill.innerText);
-  if(btn){
-    const addToCartContainer = document.getElementById('add-to-card-container');
-    const price = Number(btn.parentNode.parentNode.children[2].children[1].children[0].children[1].innerText);
-    const plantName = btn.parentNode.parentNode.children[0].innerText;
-    alert(`${plantName} has been added in the card`);
+// const cardContainer = document.getElementById('card-container')
+// cardContainer.addEventListener('click', (e) =>{
+//   const btn = e.target.closest('.add-to-card');
+//   const totalBill = document.getElementById('total-Bill');
+//   let totalBillNUmber = parseFloat(totalBill.innerText);
+//   if(btn){
+//     const addToCartContainer = document.getElementById('add-to-card-container');
+//     const price = Number(btn.parentNode.parentNode.children[2].children[1].children[0].children[1].innerText);
+//     const plantName = btn.parentNode.parentNode.children[0].innerText;
+//     alert(`${plantName} has been added in the card`);
     
-    const div = document.createElement('div');
-    div.innerHTML = `
-    <div class="flex justify-between items-center bg-[#f0fdf4] m-2 rounded-lg p-5">
-                <div>
-                  <h3 class="text-2xl font-medium">${plantName}</h3>
-                <h3 class="text-xl"> <i class="fa-solid fa-bangladeshi-taka-sign"></i> ${price}</h3>
-                </div>
-                <div onclick="removeCard()" class="h-10 w-10 flex justify-center items-center order-cancel ">
-                  ❌
-                </div>
-              </div>
-    `;
-    totalBillNUmber = totalBillNUmber + price;
-    totalBill.innerText = totalBillNUmber;
-    addToCartContainer.appendChild(div);
+//     const div = document.createElement('div');
+//     div.innerHTML = `
+//     <div class="flex justify-between items-center bg-[#f0fdf4] m-2 rounded-lg p-5">
+//                 <div>
+//                   <h3 class="text-2xl font-medium">${plantName}</h3>
+//                 <h3 class="text-xl"> <i class="fa-solid fa-bangladeshi-taka-sign"></i> ${price}</h3>
+//                 </div>
+//                 <div onclick="removeCard()" class="h-10 w-10 flex justify-center items-center order-cancel ">
+//                   ❌
+//                 </div>
+//               </div>
+//     `;
+//     totalBillNUmber = totalBillNUmber + price;
+//     totalBill.innerText = totalBillNUmber;
+//     addToCartContainer.appendChild(div);
     
-  }
+//   }
 
-})
+// })
 
 
 // ❗❗❗❗❗❗manage spinner❗❗❗❗❗❗
@@ -207,31 +207,26 @@ const manageSpinner = (status) => {
 
 // ❗❗❗❗❗❗remove bill❗❗❗❗❗❗
 const billCard = [];
-const loadAddToCardBtns = (plantId, plantPrice) => {
-  console.log(plantId, plantPrice);
-  const url = "https://openapi.programming-hero.com/api/plants";
-  fetch(url)
-    .then((res) => res.json())
-    .then((data) => AddToCard(data.plants));
-};
+const loadAddToCardBtns = (plantId, plantPrice, plantName) => {
+  console.log(plantId, plantPrice, plantName);
 
-const AddToCard = (plants) => {
-    const addToCartContainer = document.getElementById('add-to-card-container');
-  plants.forEach((plant) => {
-    const div = document.createElement('div');
+  const addToCartContainer = document.getElementById('add-to-card-container');
+    const totalBill = document.getElementById('total-Bill');
+  let totalBillNUmber = parseFloat(totalBill.innerText);
+   const div = document.createElement('div');
     div.innerHTML = `
     <div class="flex justify-between items-center bg-[#f0fdf4] m-2 rounded-lg p-5">
                 <div>
-                  <h3 class="text-2xl font-medium">${plant.Name}</h3>
-                <h3 class="text-xl"> <i class="fa-solid fa-bangladeshi-taka-sign"></i> ${plant.price}</h3>
+                  <h3 class="text-2xl font-medium">${plantName}</h3>
+                <h3 class="text-xl"> <i class="fa-solid fa-bangladeshi-taka-sign"></i> ${plantPrice}</h3>
                 </div>
-                <div onclick="removeCard()" class="h-10 w-10 flex justify-center items-center order-cancel ">
+                <div class="h-10 w-10 flex justify-center items-center order-cancel ">
                   ❌
                 </div>
               </div>
     `;
-    // addToCartContainer.appendChild(div);
-    
-  });
-//   billCard.push(billCard);
+        totalBillNUmber = totalBillNUmber + plantPrice;
+    totalBill.innerText = totalBillNUmber;
+    addToCartContainer.appendChild(div);
 };
+
